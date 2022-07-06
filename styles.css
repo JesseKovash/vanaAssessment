@@ -1,4 +1,4 @@
-body {
+html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,6 +6,21 @@ body {
   position: relative;
   background-color: #7E9BB4;
   color: rgb(225, 222, 222);
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.8rem;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0;
 }
 
 button {
@@ -23,10 +38,11 @@ form {
   flex-direction: column;
   align-items: center;
   background-color: #2e8b57;
-  margin: 10px;
+  margin: 20px;
   padding: 20px;
   border-radius: 10px;
 }
+
 input {
   border-radius: 5px;
   border: none;
@@ -37,7 +53,7 @@ input {
 }
 
 #name-input {
-  width: 80vw;
+  width: 75vw;
   height: 30px;
   font-weight: 600;
   font-size: 1.4rem;
@@ -69,8 +85,27 @@ input {
   display: none;
   background-color: seagreen;
   width: 100vw;
+  height: 60vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* padding: 20px;
+  margin: 20px; */
+  text-align: center;
+  overflow-wrap: break-word;
+  opacity: 0.95;
+}
+
+#inner-modal {
+  /* display: none; */
+  background-color: seagreen;
+  width: 80vw;
   height: 100vw;
   position: absolute;
   top: 0;
   left: 0;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  overflow-wrap: break-word;
 }
