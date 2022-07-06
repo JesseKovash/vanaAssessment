@@ -8,11 +8,12 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Find My Average and Handicap</h1>
+  <h1>Golf Calculator</h1>
   <form>
-    <label>Name</label>
+    <h2>Name</h2>
     <input id="name-input" type="text" value="">
-    <div id="scores-container">Scores
+    <h2>Scores</h2>
+    <div id="scores-container">
       <label>Score</label>
       <input class="score-input" type="number" min="18" value="">
     </div>
@@ -21,6 +22,13 @@
       <button id="submit-btn" type="submit">Get My Average and Handicap</button>
     </div>
   </form>
+  <div id="modal">
+    <div id="inner-modal">
+      <h3>Name: <span id="modal-name"></span></h3>
+      <h3>Average: <span id="modal-avg"></span></h3>
+      <h3>Handicap: <span id="modal-handicap"></span></h3>
+    </div>
+  </div>
   <script src="./index.js"></script>
 </body>
 </html>
