@@ -2,13 +2,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
   const submitButtonEl = document.getElementById('submit-btn');
   const addButtonEl = document.getElementById('add-btn');
   const scoreContainerEl = document.getElementById('scores-container');
+  const nameInputEl = document.getElementById('name-input');
   const newScoreString = '<label>Score</label><input class="score-input" type="number" min="18" value="">';
 
   async function getStats(obj) {
+    console.log(obj)
     try {
       const response = await fetch('http://localhost:3000/getData', {
         method: 'POST',
-        body: obj,
+        body: JSON.stringify(obj),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -20,8 +22,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
     }
 
-    function getFormData() {
-      event.preventDefault();
+    function getFormData(e) {
+      e.preventDefault();
+      const scoreInputs = document.querySelectorAll('.score-input');
+      const scores = [];
+      const name = nameInputEl.value;
+      scoreInputs.forEach((oneScore)=> {
+        if (oneScore.value !== '') scores.push(+oneScore.value)
+      });
+     getStats({name, scores})
 
     }
 
@@ -29,7 +38,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       scoreContainerEl.insertAdjacentHTML('beforeend', newScoreString);
     }
 
-    submitButtonEl.addEventListener('click', getFormData);
+    submitButtonEl.addEventListener('click', (e)=>getFormData(e));
     addButtonEl.addEventListener('click', addNewScore);
 
 });
